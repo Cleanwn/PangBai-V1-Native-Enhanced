@@ -155,8 +155,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>..\build\release\lib\;externals\distrom\;C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT</AdditionalLibraryDirectories>
-      <AdditionalDependencies>distorm.lib;MinHook.lib;winmm.lib;Ws2_32.lib;wldap32.lib;Crypt32.lib;libcrypto.lib;libssl.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\build\release\lib\;externals\distrom\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>distorm.lib;MinHook.lib;winmm.lib;Ws2_32.lib;wldap32.lib;Crypt32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <ProgramDatabaseFile>No</ProgramDatabaseFile>
       <StripPrivateSymbols>Yes</StripPrivateSymbols>
     </Link>
