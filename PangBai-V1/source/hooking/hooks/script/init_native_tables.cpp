@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "hooking/hooks.hpp"
 #include "native/native_hooks.hpp"
-#include "gta/script/script_patches.hpp"
 
 namespace MdayS
 {
@@ -11,7 +10,6 @@ namespace MdayS
 		if (g_running)
 		{
 			g_NativeHooks.RegisterProgram(program);
-			ScriptPatches::RegisterProgram(program);
 		}
 	}
 }

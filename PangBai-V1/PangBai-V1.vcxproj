@@ -211,7 +211,6 @@
     <ClInclude Include="source\gta\gta_util.hpp" />
     <ClInclude Include="source\gta\script\script_global.hpp" />
     <ClInclude Include="source\gta\script\script_local.hpp" />
-    <ClInclude Include="source\gta\script\script_patches.hpp" />
     <ClInclude Include="source\gta\script\script_thread.hpp" />
     <ClInclude Include="source\gui\gui.hpp" />
     <ClInclude Include="source\gui\widgets\keyboard.hpp" />
@@ -371,7 +370,6 @@
     <ClCompile Include="source\fiber\script_mgr.cpp" />
     <ClCompile Include="source\gta\script\script_global.cpp" />
     <ClCompile Include="source\gta\script\script_local.cpp" />
-    <ClCompile Include="source\gta\script\script_patches.cpp" />
     <ClCompile Include="source\gui\gui.cpp" />
     <ClCompile Include="source\gui\widgets\keyboard.cpp" />
     <ClCompile Include="source\gui\widgets\widgets.cpp" />
