@@ -33,22 +33,29 @@ namespace MdayS
 
 	void NativeHooks::Program::ScrProgram_Dtor(rage::scrProgram* _this, bool free_mem)
 	{
-		g_NativeHooks.UnregisterProgram(_this);
+		NativeHooks::UnregisterProgram(_this);
 		auto vtable = *reinterpret_cast<void***>(_this);
 		auto destructor = *(vtable + 6);
 		reinterpret_cast<decltype(&NativeHooks::Program::ScrProgram_Dtor)>(destructor)(_this, free_mem);
 	}
 
-	void NativeHooks::RunScript()
+	NativeHooks::NativeHooks() :
+		m_RegisteredPrograms(),
+		m_RegisteredHooks()
+	{
+		m_RegisteredHooks.emplace(ALL_SCRIPTS, std::vector<Hook>());
+	}
+
+	void NativeHooks::RunScriptImpl()
 	{
 		for (int i = 0; i < 176; i++)
 		{
-			if (g_patterns.m_script_programs[i] != nullptr)
+			if (g_patterns.m_script_programs[i] != nullptr && g_patterns.m_script_programs[i]->m_CodeSize && g_patterns.m_script_programs[i]->m_CodeBlocks)
 				RegisterProgram(g_patterns.m_script_programs[i]);
 		}
 	}
 
-	void NativeHooks::AddHook(joaat_t script, NativeIndex index, rage::scrNativeHandler hook)
+	void NativeHooks::AddHookImpl(joaat_t script, NativeIndex index, rage::scrNativeHandler hook)
 	{
 		if (!g_running)
 			return;
@@ -72,7 +79,7 @@ namespace MdayS
 		}
 	}
 
-	void NativeHooks::RegisterProgram(rage::scrProgram* program)
+	void NativeHooks::RegisterProgramImpl(rage::scrProgram* program)
 	{
 		if (!g_running)
 			return;
@@ -102,7 +109,7 @@ namespace MdayS
 		}
 	}
 
-	void NativeHooks::UnregisterProgram(rage::scrProgram* program)
+	void NativeHooks::UnregisterProgramImpl(rage::scrProgram* program)
 	{
 		if (auto it = m_RegisteredPrograms.find(program); it != m_RegisteredPrograms.end())
 		{
@@ -111,11 +118,11 @@ namespace MdayS
 		}
 		else
 		{
-			g_logger.insert(log_levels::RED_ERROR, "Cannot find program ", program->m_Name, " in registry. This is bad!");
+			//LOG(FATAL) << "Cannot find program " << program->m_Name << " in registry. This is bad!";
 		}
 	}
 
-	void NativeHooks::Destroy()
+	void NativeHooks::DestroyImpl()
 	{
 		for (auto& [_, program] : m_RegisteredPrograms)
 			program->Cleanup();

@@ -3,6 +3,8 @@
 #include "hooking/vmt_hook.hpp"
 #include "util/joaat.hpp"
 
+#include <unordered_map>
+
 enum class NativeIndex;
 
 namespace rage
@@ -34,14 +36,46 @@ namespace MdayS
 
 		std::unordered_map<rage::scrProgram*, std::unique_ptr<Program>> m_RegisteredPrograms;
 		std::unordered_map<joaat_t, std::vector<Hook>> m_RegisteredHooks;
-	public:
-		void RunScript();
-		static constexpr auto ALL_SCRIPTS = "ALL_SCRIPTS"_J;
-		void AddHook(joaat_t script, NativeIndex index, rage::scrNativeHandler hook);
-		void RegisterProgram(rage::scrProgram* program);
-		void UnregisterProgram(rage::scrProgram* program);
-		void Destroy();
-	};
 
-	inline NativeHooks g_NativeHooks;
+	public:
+		static void RunScript()
+		{
+			GetInstance().RunScriptImpl();
+		}
+
+		static constexpr auto ALL_SCRIPTS = "ALL_SCRIPTS"_J;
+		static void AddHook(joaat_t script, NativeIndex index, rage::scrNativeHandler hook)
+		{
+			GetInstance().AddHookImpl(script, index, hook);
+		}
+
+		static void RegisterProgram(rage::scrProgram* program)
+		{
+			GetInstance().RegisterProgramImpl(program);
+		}
+
+		static void UnregisterProgram(rage::scrProgram* program)
+		{
+			GetInstance().UnregisterProgramImpl(program);
+		}
+
+		static void Destroy()
+		{
+			GetInstance().DestroyImpl();
+		}
+
+	private:
+		NativeHooks();
+		static NativeHooks& GetInstance()
+		{
+			static NativeHooks Instance;
+			return Instance;
+		}
+
+		void RunScriptImpl();
+		void AddHookImpl(joaat_t script, NativeIndex index, rage::scrNativeHandler hook);
+		void RegisterProgramImpl(rage::scrProgram* program);
+		void UnregisterProgramImpl(rage::scrProgram* program);
+		void DestroyImpl();
+	};
 }
