@@ -10,6 +10,11 @@
 #include "fiber/script_mgr.hpp"
 #include "gui/widgets/keyboard.hpp"
 
+//请注意，本源码由旁白sama编写，联系QQ：2587514660，可适当指导使用
+//该框架所包含的内容有原GTA5传承版框架nano42，yimv2增强版，minhook库等，并非完全原创，请知悉
+//作者的话：我不管你们拿去套功能收费还是什么，我不管，但如果付费卖框架那你妈就被我狠狠的操死
+//温馨提示：本框架完全免费，仅供学习和交流，不做任何非法用途，使用者造成一切后果与旁白sama无关
+
 namespace MdayS//请注意，将所有代码进入MdayS命名空间
 {
     static HANDLE main_thread_handle{};
