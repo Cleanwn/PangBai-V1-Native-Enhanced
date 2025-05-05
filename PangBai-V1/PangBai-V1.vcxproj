@@ -156,7 +156,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>..\build\release\lib\;externals\distrom\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>distorm.lib;MinHook.lib;winmm.lib;Ws2_32.lib;wldap32.lib;Crypt32.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>distorm.lib;MinHook.lib;Ws2_32.lib;wldap32.lib;Crypt32.lib;winmm.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <ProgramDatabaseFile>No</ProgramDatabaseFile>
       <StripPrivateSymbols>Yes</StripPrivateSymbols>
     </Link>
