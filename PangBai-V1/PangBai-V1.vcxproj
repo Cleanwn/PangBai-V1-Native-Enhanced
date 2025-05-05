@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a49101b3-4caa-4d14-b3ca-ba5c6819e3f3}</ProjectGuid>
+    <RootNamespace>Sysec</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>PangBai-V1</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\build\release\</OutDir>
+    <IntDir>$(SolutionDir)\build\int\release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\build\debug\</OutDir>
+    <IntDir>$(SolutionDir)\build\int\debug\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;SYSEC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;SYSEC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;SYSEC_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>source\;externals\imgui\;externals\minhook\include;externals\GTAV-Classes;externals\json\include;</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>..\build\debug\lib\;externals\distrom\;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>distorm.lib;ImGui.lib;MinHook.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;SYSEC_EXPORTS;_WINDOWS;_USRDLL;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>source\;externals\imgui\;externals\minhook\include;externals\json\include;externals\distrom</AdditionalIncludeDirectories>
+      <StringPooling>true</StringPooling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>..\build\release\lib\;externals\distrom\;C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT</AdditionalLibraryDirectories>
+      <AdditionalDependencies>distorm.lib;MinHook.lib;winmm.lib;Ws2_32.lib;wldap32.lib;Crypt32.lib;libcrypto.lib;libssl.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>No</ProgramDatabaseFile>
+      <StripPrivateSymbols>Yes</StripPrivateSymbols>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="externals\distrom\distorm.h" />
+    <ClInclude Include="externals\distrom\mnemonics.h" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\automobile\CAutomobileCreationNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\CPedComponents.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\door\CDoorCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\dynamic_entity\CDynamicEntityGameStateDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\entity\CEntityOrientationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\entity\CEntityScriptGameStateDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\object\CObjectCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedAIDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedAppearanceDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedAttachDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedGameStateDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedHealthDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedInventoryDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedMovementDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedOrientationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedScriptCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\ped\CPedTaskSpecificDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\physical\CPhysicalAngVelocityDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\physical\CPhysicalAttachDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\physical\CPhysicalHealthDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\physical\CPhysicalVelocityDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\pickup\CPickupCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\pickup_placement\CPickupPlacementCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\player\CPlayerAppearanceDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\player\CPlayerCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\player\CPlayerGamerDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\player\CPlayerGameStateDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\player\CPlayerSectorPosNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\proximity_migrateable\CGlobalFlagsDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\proximity_migrateable\CMigrationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\proximity_migrateable\CSectorDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\proximity_migrateable\CSectorPositionDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\task\ClonedTakeOffPedVariationInfo.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\train\CTrainGameStateDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\vehicle\CVehicleCreationDataNode.hpp" />
+    <ClInclude Include="externals\GTAV-Classes\datanodes\vehicle\CVehicleGadgetDataNode.hpp" />
+    <ClInclude Include="externals\types\rage\vector.hpp" />
+    <ClInclude Include="externals\types\script\scrNativeHandler.hpp" />
+    <ClInclude Include="externals\types\script\scrVector.hpp" />
+    <ClInclude Include="source\fiber\script.hpp" />
+    <ClInclude Include="source\fiber\script_mgr.hpp" />
+    <ClInclude Include="source\file.hpp" />
+    <ClInclude Include="source\gta\enums.hpp" />
+    <ClInclude Include="source\gta\gta_util.hpp" />
+    <ClInclude Include="source\gta\script\script_global.hpp" />
+    <ClInclude Include="source\gta\script\script_local.hpp" />
+    <ClInclude Include="source\gta\script\script_patches.hpp" />
+    <ClInclude Include="source\gta\script\script_thread.hpp" />
+    <ClInclude Include="source\gui\gui.hpp" />
+    <ClInclude Include="source\gui\widgets\keyboard.hpp" />
+    <ClInclude Include="source\gui\widgets\widgets.hpp" />
+    <ClInclude Include="source\hooking\detour.hpp" />
+    <ClInclude Include="source\hooking\hooks.hpp" />
+    <ClInclude Include="source\hooking\vmt_hook.hpp" />
+    <ClInclude Include="source\logger\logger.hpp" />
+    <ClInclude Include="source\native\crossmap.hpp" />
+    <ClInclude Include="source\native\invoker.hpp" />
+    <ClInclude Include="source\native\natives.hpp" />
+    <ClInclude Include="source\native\native_hooks.hpp" />
+    <ClInclude Include="source\patterns\patterns.hpp" />
+    <ClInclude Include="source\patterns\scanner\pattern.hpp" />
+    <ClInclude Include="source\tick\ticks.hpp" />
+    <ClInclude Include="source\types\entity\CDynamicEntity.hpp" />
+    <ClInclude Include="source\types\entity\CEntity.hpp" />
+    <ClInclude Include="source\types\entity\fwEntity.hpp" />
+    <ClInclude Include="source\types\fx\ExplosionType.hpp" />
+    <ClInclude Include="source\types\network\CNetGamePlayer.hpp" />
+    <ClInclude Include="source\types\network\CNetworkPlayerMgr.hpp" />
+    <ClInclude Include="source\types\network\netAddress.hpp" />
+    <ClInclude Include="source\types\network\netEvent.hpp" />
+    <ClInclude Include="source\types\network\NetEventType.hpp" />
+    <ClInclude Include="source\types\network\netMessage.hpp" />
+    <ClInclude Include="source\types\network\netObject.hpp" />
+    <ClInclude Include="source\types\network\netObjectMgrBase.hpp" />
+    <ClInclude Include="source\types\network\netPlayer.hpp" />
+    <ClInclude Include="source\types\network\netPlayerMgrBase.hpp" />
+    <ClInclude Include="source\types\network\netSocketAddress.hpp" />
+    <ClInclude Include="source\types\network\rlGamerHandle.hpp" />
+    <ClInclude Include="source\types\network\rlGamerInfo.hpp" />
+    <ClInclude Include="source\types\network\rlGamerInfoBase.hpp" />
+    <ClInclude Include="source\types\network\sync\CProjectBaseSyncDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\netSyncDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\netSyncNodeBase.hpp" />
+    <ClInclude Include="source\types\network\sync\netSyncTree.hpp" />
+    <ClInclude Include="source\types\network\sync\NodeCommonDataOperations.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\automobile\CAutomobileCreationNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\CPedComponents.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\door\CDoorCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\door\CDoorMovementDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\door\CDoorScriptGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\door\CDoorScriptInfoDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\dynamic_entity\CDynamicEntityGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\entity\CEntityOrientationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\entity\CEntityScriptGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\entity\CEntityScriptInfoDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\heli\CHeliControlDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\heli\CHeliHealthDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\object\CObjectCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedAIDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedAppearanceDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedAttachDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedComponentReservationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedHealthDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedInventoryDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedMovementDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedMovementGroupDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedOrientationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedScriptCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedTaskSequenceDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedTaskSpecificDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\ped\CPedTaskTreeDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalAngVelocityDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalAttachDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalHealthDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalMigrationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalScriptGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalScriptMigrationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\physical\CPhysicalVelocityDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\pickup\CPickupCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\pickup_placement\CPickupPlacementCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerAmbientModelStreamingNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerAppearanceDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerCameraDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerExtendedGameStateNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerGamerDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerPedGroupDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerSectorPosNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\player\CPlayerWantedAndLOSDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\proximity_migrateable\CGlobalFlagsDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\proximity_migrateable\CMigrationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\proximity_migrateable\CSectorDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\proximity_migrateable\CSectorPositionDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\task\CClonedGeneralSweepInfo.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\task\ClonedTakeOffPedVariationInfo.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\train\CTrainGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleComponentReservationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleControlDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleCreationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleDamageStatusDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleGadgetDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleGameStateDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleHealthDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleProximityMigrationDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleSteeringDataNode.hpp" />
+    <ClInclude Include="source\types\network\sync\nodes\vehicle\CVehicleTaskDataNode.hpp" />
+    <ClInclude Include="source\types\pad\ControllerInputs.hpp" />
+    <ClInclude Include="source\types\ped\CPedFactory.hpp" />
+    <ClInclude Include="source\types\ped\PedConfigFlag.hpp" />
+    <ClInclude Include="source\types\rage\atArray.hpp" />
+    <ClInclude Include="source\types\rage\datBase.hpp" />
+    <ClInclude Include="source\types\rage\datBitBuffer.hpp" />
+    <ClInclude Include="source\types\rage\fwExtensibleBase.hpp" />
+    <ClInclude Include="source\types\rage\fwExtension.hpp" />
+    <ClInclude Include="source\types\rage\fwExtensionContainer.hpp" />
+    <ClInclude Include="source\types\rage\fwRefAwareBase.hpp" />
+    <ClInclude Include="source\types\rage\fwRefAwareBaseImpl.hpp" />
+    <ClInclude Include="source\types\rage\pgBase.hpp" />
+    <ClInclude Include="source\types\rage\RTTI.hpp" />
+    <ClInclude Include="source\types\rage\sysMemAllocator.hpp" />
+    <ClInclude Include="source\types\rage\tlsContext.hpp" />
+    <ClInclude Include="source\types\rage\vector.hpp" />
+    <ClInclude Include="source\types\script\CGameScriptHandler.hpp" />
+    <ClInclude Include="source\types\script\CGameScriptId.hpp" />
+    <ClInclude Include="source\types\script\CGameScriptObjInfo.hpp" />
+    <ClInclude Include="source\types\script\globals\GlobalPlayerBD.hpp" />
+    <ClInclude Include="source\types\script\globals\GPBD_FM.hpp" />
+    <ClInclude Include="source\types\script\globals\GPBD_FM_3.hpp" />
+    <ClInclude Include="source\types\script\globals\GPBD_Kicking.hpp" />
+    <ClInclude Include="source\types\script\globals\GPBD_MissionName.hpp" />
+    <ClInclude Include="source\types\script\globals\GSBD.hpp" />
+    <ClInclude Include="source\types\script\globals\GSBD_BlockB.hpp" />
+    <ClInclude Include="source\types\script\globals\GSBD_FM.hpp" />
+    <ClInclude Include="source\types\script\globals\GSBD_FM_Events.hpp" />
+    <ClInclude Include="source\types\script\globals\GSBD_Kicking.hpp" />
+    <ClInclude Include="source\types\script\globals\GSBD_PropertyInstances.hpp" />
+    <ClInclude Include="source\types\script\globals\g_AMC_playerBD.hpp" />
+    <ClInclude Include="source\types\script\GtaThread.hpp" />
+    <ClInclude Include="source\types\script\HudColor.hpp" />
+    <ClInclude Include="source\types\script\MPScriptData.hpp" />
+    <ClInclude Include="source\types\script\ScriptEvent.hpp" />
+    <ClInclude Include="source\types\script\scriptHandler.hpp" />
+    <ClInclude Include="source\types\script\scriptId.hpp" />
+    <ClInclude Include="source\types\script\scriptIdBase.hpp" />
+    <ClInclude Include="source\types\script\scrNativeHandler.hpp" />
+    <ClInclude Include="source\types\script\scrProgram.hpp" />
+    <ClInclude Include="source\types\script\scrThread.hpp" />
+    <ClInclude Include="source\types\script\scrVector.hpp" />
+    <ClInclude Include="source\types\script\Timer.hpp" />
+    <ClInclude Include="source\types\script\types.hpp" />
+    <ClInclude Include="source\util\joaat.hpp" />
+    <ClInclude Include="source\util\save_json.hpp" />
+    <ClInclude Include="source\gui\variable.hpp" />
+    <ClInclude Include="source\xor_.hpp" />
+    <ClInclude Include="source\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\dllmain.cpp" />
+    <ClCompile Include="source\fiber\script.cpp" />
+    <ClCompile Include="source\fiber\script_mgr.cpp" />
+    <ClCompile Include="source\gta\script\script_global.cpp" />
+    <ClCompile Include="source\gta\script\script_local.cpp" />
+    <ClCompile Include="source\gta\script\script_patches.cpp" />
+    <ClCompile Include="source\gui\gui.cpp" />
+    <ClCompile Include="source\gui\widgets\keyboard.cpp" />
+    <ClCompile Include="source\gui\widgets\widgets.cpp" />
+    <ClCompile Include="source\hooking\hooks.cpp" />
+    <ClCompile Include="source\hooking\hooks\script\init_native_tables.cpp" />
+    <ClCompile Include="source\hooking\hooks\script\run_script_threadscpp.cpp" />
+    <ClCompile Include="source\logger\exception_handler.cpp" />
+    <ClCompile Include="source\logger\logger.cpp" />
+    <ClCompile Include="source\native\invoker.cpp" />
+    <ClCompile Include="source\native\native_hooks.cpp" />
+    <ClCompile Include="source\patterns\patterns.cpp" />
+    <ClCompile Include="source\patterns\scanner\pattern.cpp" />
+    <ClCompile Include="source\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\tick\menu_tick.cpp" />
+    <ClCompile Include="source\types\network\rlGamerHandle.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
